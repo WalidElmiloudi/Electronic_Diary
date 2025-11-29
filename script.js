@@ -1,19 +1,19 @@
 // DECLARING THE VARIABLES
-const loginForm = document.getElementById("login");
+const LoginForm = document.getElementById("login");
 const RegisterForm = document.getElementById("register");
 const goToRegister = document.getElementById("goToRegister");
 const goToLogin = document.getElementById("goToLogin");
 // ADDING AN EVENT LISTENER TO THE REGISTER REDIRECT
 goToRegister.addEventListener("click", () => {
-  loginForm.classList.replace("flex", "hidden");
-  loginForm.setAttribute("aria-hidden", "true");
+  LoginForm.classList.replace("flex", "hidden");
+  LoginForm.setAttribute("aria-hidden", "true");
   RegisterForm.classList.replace("hidden", "flex");
   RegisterForm.removeAttribute("aria-hidden");
 })
 // ADDING AN EVENT LISTENER TO THE LOGIN REDIRECT
-goToRegister.addEventListener("click", () => {
-  loginForm.classList.replace("flex", "hidden");
-  loginForm.setAttribute("aria-hidden", "true");
-  RegisterForm.classList.replace("hidden", "flex");
-  RegisterForm.removeAttribute("aria-hidden");
+goToLogin.addEventListener("click", () => {
+  RegisterForm.classList.replace("flex", "hidden");
+  RegisterForm.setAttribute("aria-hidden", "true");
+  LoginForm.classList.replace("hidden", "flex");
+  LoginForm.removeAttribute("aria-hidden");
 })
