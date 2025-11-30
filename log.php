@@ -19,10 +19,11 @@ currenttime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   $log = $_POST['message'];
   $date = date("y-m-d h:i");
   $conn->query("INSERT INTO `$tablename` (logTxt,currenttime) VALUES ('$log','$date')");
-
+    $conn->close();
  header("Location: user.php");
  exit;
   }
+  $conn->close();
   header("Location: index.php");
   exit;
 ?>

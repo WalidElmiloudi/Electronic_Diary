@@ -26,7 +26,7 @@ if($result->num_rows > 0){
  $_SESSION['Loginmessage']         = "<div class='w-60 h-10 border border-red-600 flex justify-center items-center'>
 <h1 class='text-red-600 text-md font-bold'>Wrong Password Or Email !</h1>
     </div>";
-
+$conn->close();
 header("Location: index.php");
 exit;
 ?>

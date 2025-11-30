@@ -43,6 +43,7 @@
             }
 
         }
+        $conn->close();
 
     ?>
   </section>

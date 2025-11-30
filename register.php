@@ -21,6 +21,7 @@ if((!preg_match($name_reg,$name) || !preg_match($email_reg,$email) || !preg_matc
     $_SESSION['message'] = "<div class='w-60 py-2 border border-red-600 flex justify-center items-center'>
 <h1 class='text-red-600 text-md font-bold'>Please enter a valid username</h1>
     </div>";
+    $conn->close();
     header("Location: index.php");
 exit;
   }
@@ -28,6 +29,7 @@ exit;
     $_SESSION['message'] = "<div class='w-60 py-2 border border-red-600 flex justify-center items-center'>
 <h1 class='text-red-600 text-md font-bold'>Please enter a valid email</h1>
     </div>";
+    $conn->close();
     header("Location: index.php");
 exit;
   }
@@ -35,6 +37,7 @@ exit;
     $_SESSION['message'] = "<div class='w-60 py-2 border border-red-600 flex justify-center items-center'>
 <h1 class='text-red-600 text-md font-bold'>Please enter a valid password</h1>
     </div>";
+    $conn->close();
     header("Location: index.php");
 exit;
   }
@@ -54,5 +57,7 @@ if ($checkemail->num_rows > 0) {
 VALUES ('$name', '$email', '$hashedPassword')");
     session_unset();
 }
+
+$conn->close();
 header("Location: index.php");
 exit;
