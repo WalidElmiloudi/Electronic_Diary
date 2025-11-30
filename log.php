@@ -17,7 +17,7 @@ currenttime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   )");
 
   $log = $_POST['message'];
-  $date = date("d-m-y h:i");
+  $date = date("y-m-d h:i");
   $conn->query("INSERT INTO `$tablename` (logTxt,currenttime) VALUES ('$log','$date')");
 
  header("Location: user.php");
